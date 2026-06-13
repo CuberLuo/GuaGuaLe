@@ -50,7 +50,7 @@ function RedeemArea({
     setToastType(success ? 'success' : 'error')
     setToastMsg(
       success
-        ? '已复制兑奖码，请发送给罗俊涛进行兑奖'
+        ? '兑奖码已复制，发送给罗俊涛即可兑奖'
         : '自动复制失败，请手动复制兑奖码',
     )
   }, [redeemCode])

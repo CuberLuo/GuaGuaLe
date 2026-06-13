@@ -10,7 +10,7 @@ interface MessageToastProps {
   onClose: () => void;
 }
 
-function MessageToast({ type, message, duration = 115000, onClose }: MessageToastProps) {
+function MessageToast({ type, message, duration = 5000, onClose }: MessageToastProps) {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
