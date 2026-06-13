@@ -1,0 +1,16 @@
+{
+  "name": "guaguale",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:web\"",
+    "dev:server": "cd guaguale_express && npm run dev",
+    "dev:web": "cd guaguale_web && npm run dev",
+    "docker:up": "docker compose up -d --build",
+    "docker:down": "docker compose down",
+    "docker:rebuild": "docker compose down -v && docker compose up -d --build",
+    "docker:logs": "docker compose logs -f"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

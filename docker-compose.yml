@@ -1,0 +1,24 @@
+services:
+  server:
+    build: ./guaguale_express
+    container_name: guaguale-server
+    restart: always
+    ports:
+      - "3001:3001"
+    environment:
+      DB_HOST: host.docker.internal
+      DB_PORT: ${DB_PORT}
+      DB_USER: root
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_NAME: ${DB_NAME}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  web:
+    build: ./guaguale_web
+    container_name: guaguale-web
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - server

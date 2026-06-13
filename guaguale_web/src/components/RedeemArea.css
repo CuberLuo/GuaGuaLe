@@ -1,0 +1,83 @@
+/* 兑奖区域 */
+.redeem-area {
+  width: 300px;
+  padding: 25px;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(255, 215, 0, 0.4);
+  text-align: center;
+}
+
+.redeem-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.redeem-label {
+  font-size: 14px;
+  color: #995;
+  margin-bottom: 8px;
+}
+
+.redeem-amount {
+  font-size: 42px;
+  color: #e64340;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.redeem-code-section {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.redeem-code-label {
+  font-size: 12px;
+  color: #666;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.redeem-code {
+  font-size: 18px;
+  font-family: 'Courier New', monospace;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 2px;
+  word-break: break-all;
+}
+
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .redeem-area {
+    width: 280px;
+    padding: 20px;
+  }
+
+  .redeem-amount {
+    font-size: 36px;
+  }
+
+  .redeem-code {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .redeem-area {
+    width: 260px;
+    padding: 15px;
+  }
+
+  .redeem-amount {
+    font-size: 32px;
+  }
+
+  .redeem-code {
+    font-size: 14px;
+  }
+}

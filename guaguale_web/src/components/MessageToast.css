@@ -1,0 +1,64 @@
+/* ElMessage 风格的顶部提示 */
+.message-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.message-toast.enter {
+  animation: slideDown 0.3s ease forwards;
+}
+
+.message-toast.exit {
+  animation: slideUp 0.3s ease forwards;
+}
+
+.message-toast.success {
+  background: rgba(240, 249, 235, 0.9);
+  color: #67c23a;
+  border: 1px solid #e1f3d8;
+}
+
+.message-toast.error {
+  background: rgba(254, 240, 240, 0.9);
+  color: #f56c6c;
+  border: 1px solid #fde2e2;
+}
+
+.message-icon {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
