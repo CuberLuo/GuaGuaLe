@@ -258,6 +258,7 @@ function App() {
   }
 
   return (
+    <>
     <div className="container" ref={containerRef}>
       {errorMsg && (
         <MessageToast
@@ -320,17 +321,6 @@ function App() {
         </div>
       )}
 
-      {/* 祝贺动画 */}
-      {showCongrats && (
-        <CongratsAnimation
-          prize={prize}
-          luckyMoney={luckyMoneyRef.current}
-          remainingCount={remainingCount}
-          onScratchAgain={handleScratchAgain}
-          onAutoHide={handleAutoHide}
-        />
-      )}
-
       <footer className="copyright">
         <a href="https://github.com/CuberLuo/GuaGuaLe" target="_blank" rel="noopener noreferrer" className="github-link" title="GitHub">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
@@ -340,6 +330,18 @@ function App() {
         <span>© {new Date().getFullYear()} 罗俊涛 All Rights Reserved</span>
       </footer>
     </div>
+
+    {/* 祝贺动画 - 放在 container 外部，覆盖整个网页 */}
+    {showCongrats && (
+      <CongratsAnimation
+        prize={prize}
+        luckyMoney={luckyMoneyRef.current}
+        remainingCount={remainingCount}
+        onScratchAgain={handleScratchAgain}
+        onAutoHide={handleAutoHide}
+      />
+    )}
+    </>
   );
 }
 
